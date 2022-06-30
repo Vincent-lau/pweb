@@ -1,4 +1,9 @@
-baseURL = 'https://github.com/vincent-lau/blog'
+baseURL = 'https://github.com/vincent-lau/blog/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Denotational Logs'
 theme = "PaperMod"
+
+custom_css=["css/custom.css"]
+custom_js = ["ja/custom.js"]
+
+sectionPagesMenu = "main"
