@@ -1,4 +1,4 @@
-baseURL = 'https://github.com/vincent-lau/blog/'
+baseURL = 'https://vincent-lau.github.com/blog/'
 languageCode = 'en-us'
 title = 'Denotational Logs'
 theme = "PaperMod"
