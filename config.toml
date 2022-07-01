@@ -1,6 +1,6 @@
-baseURL = 'https://vincent-lau.github.io/blog/'
+baseURL = 'https://denotational-logs.onrender.com'
 languageCode = 'en-us'
-title = 'Denotational Logs'
+title = 'CuSO4'
 theme = "PaperMod"
 
 custom_css=["css/custom.css"]
