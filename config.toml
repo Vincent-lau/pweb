@@ -1,9 +1,9 @@
-baseURL = 'https://denotational-logs.onrender.com'
+baseURL = 'https://denotational-logs.onrender.com/'
 languageCode = 'en-us'
 title = 'CuSO4'
 theme = "PaperMod"
 
 custom_css=["css/custom.css"]
-custom_js = ["ja/custom.js"]
+custom_js = ["js/custom.js"]
 
 sectionPagesMenu = "main"
