@@ -1,4 +1,4 @@
-baseURL = 'cuso4.me'
+baseURL = 'https://denotational-logs.onrender.com'
 languageCode = 'en-us'
 title = '[[logs]]'
 theme = "PaperMod"
