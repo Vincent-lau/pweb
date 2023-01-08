@@ -1,6 +1,24 @@
 baseURL = 'https://denotational-logs.onrender.com'
 languageCode = 'en-us'
-title = 'Denotational Logs'
+title = '[[logs]]'
 theme = "PaperMod"
 
-sectionPagesMenu = "main"
+# sectionPagesMenu = "main"
+
+[menu]
+[[menu.main]]
+  name = 'Home'
+  url = '/'
+  weight = 10
+[[menu.main]]
+  name = 'About'
+  url = '/about'
+  weight = 20
+[[menu.main]]
+  name = 'Posts'
+  url = '/posts'
+  weight = 25
+[[menu.main]]
+  name = 'Contact'
+  url = '/contact'
+  weight = 30
