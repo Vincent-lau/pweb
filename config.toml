@@ -22,5 +22,5 @@ theme = "PaperMod"
   name = 'Contact'
   url = '/contact'
   weight = 30
-[params]
+[params.meta]
   favicon=true
