@@ -61,3 +61,9 @@ node evaluation of datalog queries, and then extend it to multiple nodes.
 ### Limitations
 
 ## Conclusion
+
+
+## Appendix
+
+Feel free to checkout the [full dissertation](/writeup/diss.pdf) and the code
+[repo](https://github.com/Vincent-lau/erlog).
