@@ -191,8 +191,22 @@ $$
 And note that \\(\mathit{fix}(f\circ g)=\bigsqcup_n(f\circ g)^n(\bot))\sqsubseteq \bigsqcup_n(f\circ g)^n(f(\bot))) = f(\mathit{fix}(g\circ f))\\)
 since the \\(\bot \sqsubseteq f(\bot)\\) and \\((f\circ g)^n\\) is a continuous function.
 
-The second subquestion just requires some massage of the form and we should get a similar
-form to the first one.
+The second subquestion just requires some massage of the form and we should 
+get a similar form to the first one.
+
+
+### Remarks
+
+The above three methods might look rather differnet, but in fact, they are related.
+I think it should always be possible, if we can prove something with one method,
+then we should be able to do it with other two methods. The lfp1+lfp2 method starts
+from the definition, and uses the properties of lfp. Tarski's expansion actually
+"embeds" the two properties within one representation, i.e. \\(\sqcup_n f^n(\bot)\\).
+Scott induction tries to prove that \\(f\\) preserves some property. There is often
+something special about the property that makes our f preserve it, rather than
+something special about \\(f\\). Often this property has something to do with \\(f\\),
+since Scott induction's premise is quite weak \\((d\in S\implies f(d)\in S)\\), 
+but there is a lot of freedom in choosing what \\(S\\) is.
 
 ## Aside: applications of denotational semantics
 
