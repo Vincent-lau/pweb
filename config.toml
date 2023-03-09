@@ -22,5 +22,9 @@ theme = "PaperMod"
   name = 'Contact'
   url = '/contact'
   weight = 30
+[[menu.main]]
+  name = '🍞'
+  url = '/bread'
+  weight = 100
 [params.meta]
   favicon=true
