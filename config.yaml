@@ -1,0 +1,68 @@
+baseURL: https://cuso4.me/
+languageCode: en-us
+title: '[[logs]]'
+theme: PaperMod
+
+enableEmjoi: true
+
+menu:
+  main:
+    - name: Home
+      url: /
+      weight: 10
+    - name: About
+      url: /about
+      weight: 20
+    - name: Posts
+      url: /posts
+      weight: 25
+    # - name: Contact
+    #   url: /contact
+    #   weight: 30
+    - name: "🍞"
+      url: /bread
+      weight: 100
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+
+params:
+  env: production
+  author: Shuntian Liu
+
+  defaultTheme: auto
+
+  ShowReadinTime: true
+  ShowPostNavLinks: true
+  ShowCodeCopyButtons: true
+  ShowBreadCrumbs: true
+  ShowToc: true
+  favicon: true
+  profileMode:
+    enabled: true
+    title: "A website" # optional default will be site title
+    subtitle: "and its subtitle"
+    # imageUrl: "<image link>" # optional
+    # imageTitle: "<title of image as alt>" # optional
+    # imageWidth: 120 # custom size
+    # imageHeight: 120 # custom size
+    buttons:
+      - name: Blog
+        url: "/posts"
+    #   - name: Github
+    #     url: "https://github.com/"
+
+  socialIcons:
+    - name: twitter
+      title: twitter
+      url: 'https://twitter.com/Incipit0'
+    - name: email
+      url: 'mailto:shuntian.liu@outlook.com'
+    - name: github
+      url: 'https://github.com/Vincent-lau'
+    - name: telegram
+      url: 'https://t.me/lst_vincent'
