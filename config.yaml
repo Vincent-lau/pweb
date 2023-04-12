@@ -3,7 +3,13 @@ languageCode: en-us
 title: '[[logs]]'
 theme: PaperMod
 
-enableEmjoi: true
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
 
 menu:
   main:
@@ -33,8 +39,10 @@ outputs:
 params:
   env: production
   author: Shuntian Liu
+  math: true
 
   defaultTheme: auto
+  disableThemeToggle: false
 
   ShowReadinTime: true
   ShowPostNavLinks: true
@@ -66,3 +74,5 @@ params:
       url: 'https://github.com/Vincent-lau'
     - name: telegram
       url: 'https://t.me/lst_vincent'
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/shuntian-liu-27b839170/'
