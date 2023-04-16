@@ -9,7 +9,25 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 enableEmoji: true
-pygmentsUseClasses: true
+pygmentsCodefences: true
+
+
+markup:
+  highlight:
+    anchorLineNos: false
+    codeFences: true
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    noHl: false
+    style: native
+    tabWidth: 4
+
 
 menu:
   main:
@@ -42,14 +60,12 @@ params:
   math: true
 
   defaultTheme: auto
-  disableThemeToggle: false
 
   ShowReadinTime: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowBreadCrumbs: true
   ShowToc: true
-  favicon: true
   profileMode:
     enabled: true
     title: "A website" # optional default will be site title
