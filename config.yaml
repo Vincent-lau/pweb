@@ -92,3 +92,7 @@ params:
       url: 'https://t.me/lst_vincent'
     - name: linkedin
       url: 'https://www.linkedin.com/in/shuntian-liu-27b839170/'
+    - name: cv
+      url: '/cv.pdf'
+    - name: bilibili
+      url: 'https://space.bilibili.com/94629035?spm_id_from=333.1007.0.0'
