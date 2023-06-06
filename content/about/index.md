@@ -12,3 +12,4 @@ I am interested in the development of distributed systems, as well as some theor
 parts such as model checking, type theory and denotational semantics, or better
 yet, an intersection between these two!
 
+Feel free to reach me out if you want to discuss anything in my posts.

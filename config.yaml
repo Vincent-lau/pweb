@@ -91,7 +91,7 @@ params:
     - name: telegram
       url: 'https://t.me/lst_vincent'
     - name: linkedin
-      url: 'https://www.linkedin.com/in/shuntian-liu/'
+      url: 'https://www.linkedin.com/in/shuntian-liu'
     - name: cv
       url: '/cv.pdf'
     - name: bilibili
