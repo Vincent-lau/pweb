@@ -16,7 +16,7 @@ markup:
   highlight:
     anchorLineNos: false
     codeFences: true
-    guessSyntax: false
+    guessSyntax: true
     hl_Lines: ""
     hl_inline: false
     lineAnchors: ""
@@ -25,7 +25,7 @@ markup:
     lineNumbersInTable: true
     noClasses: true
     noHl: false
-    style: native
+    style: abap
     tabWidth: 4
 
 
@@ -55,6 +55,9 @@ outputs:
 
 
 params:
+  assets:
+    disableHLJS: true
+
   env: production
   author: Shuntian Liu
   math: true
@@ -91,7 +94,7 @@ params:
     - name: telegram
       url: 'https://t.me/lst_vincent'
     - name: linkedin
-      url: 'https://www.linkedin.com/in/shuntian-liu'
+      url: 'https://www.linkedin.com/in/shuntian-liu/'
     - name: cv
       url: '/cv.pdf'
     - name: bilibili

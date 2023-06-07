@@ -29,6 +29,7 @@ conflict resolution into Mnesia, so that developers do not need to resolve this
 conflict each time there is a network partition. To understand how we can achieve
 this, we first need to understand how Mnesia works.
 
+![Mnesia cluster](/image/hypermnesia/mesh.svg)
 
 ## Mnesia
 
@@ -47,14 +48,6 @@ handle client requests. A cluster of Mnesia nodes are connected via the Erlang
 distribution protocol, which uses TCP/IP as its carrier by default, providing
 reliable in-order delivery. Moreover, the connection is transitive, which means
 the nodes form a cluster of fully connected nodes (or a mesh).
-
-<script type="text/tikz">
-  \begin{tikzpicture}
-    \draw (0,0) circle (1in);
-  \end{tikzpicture}
-</script>
-
-
 
 
 ### Access contexts and consistency models
