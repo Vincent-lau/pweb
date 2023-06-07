@@ -29,7 +29,7 @@ conflict resolution into Mnesia, so that developers do not need to resolve this
 conflict each time there is a network partition. To understand how we can achieve
 this, we first need to understand how Mnesia works.
 
-![Mnesia cluster](/image/hypermnesia/mesh.svg)
+{{< figure src="/image/hypermnesia/mesh.svg" caption="Mnesia cluster connection" >}}
 
 ## Mnesia
 
