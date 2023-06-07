@@ -210,7 +210,7 @@ but there is a lot of freedom in choosing what \\(S\\) is.
 
 ## Aside: applications of denotational semantics
 
-I want to give a applications of an area that is as abstract as denotational semantics[^2],
+I want to give a few applications of an area that is as abstract as denotational semantics,
 in case you were thinking that this is just some useless abstract math:
 
 - Give semantics to while loops without recursion. The denotational semantics of
@@ -282,6 +282,3 @@ compiled for you, enjoy :)
 [^1]: It actually took me a while to realise this. To elaborate on this, it is like
 0 is the smallest positive real number, and since 0 is an integer and all integers
 are real numbers, 0 is also the smallest positive integer.
-
-[^2]: There is actually something more abstract called Category theory :), which
-is so-called abstract nonsense.

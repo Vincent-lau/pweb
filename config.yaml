@@ -56,10 +56,11 @@ outputs:
 
 
 params:
-  Tocside: 'left'
+  TocSide: 'left'
+  TocOpen: true
   assets:
     disableHLJS: true
-  EnableInstantClick: true
+  # EnableInstantClick: true
 
   env: production
   author: Shuntian Liu
