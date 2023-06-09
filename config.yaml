@@ -1,7 +1,7 @@
 baseURL: https://cuso4.me/
 languageCode: en-us
 title: '[[logs]]'
-theme: PaperModX
+theme: PaperMod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
@@ -10,15 +10,12 @@ buildFuture: false
 buildExpired: false
 enableEmoji: true
 pygmentsCodefences: true
-pygmentsUseClasses: true
+# pygmentsUseClasses: true
 
 
 markup:
-  goldmark:
-    renderer:
-      unsafe: true
   highlight:
-    anchorLineNos: false
+    # anchorLineNos: false
     codeFences: true
     guessSyntax: true
     hl_Lines: ""
@@ -27,17 +24,17 @@ markup:
     lineNoStart: 1
     lineNos: false
     lineNumbersInTable: true
-    noClasses: false
+    # noClasses: false
     noHl: false
-    style: native
+    style: doom-one
     tabWidth: 4
 
 
 menu:
   main:
-    # - name: Home
-    #   url: /
-    #   weight: 10
+    - name: Home
+      url: /
+      weight: 10
     - name: About
       url: /about
       weight: 20
@@ -56,11 +53,8 @@ outputs:
 
 
 params:
-  TocSide: 'left'
-  TocOpen: true
   assets:
     disableHLJS: true
-  # EnableInstantClick: true
 
   env: production
   author: Shuntian Liu
