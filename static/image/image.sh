@@ -1,3 +1,6 @@
 #!/usr/bin/env sh
 
-pdflatex -shell-escape -interaction=nonstopmode -file-line-error -output-directory=$1 image.tex
+pdflatex -shell-escape image.tex && \
+pdftoppm image.pdf image -png -singlefile -rx 800 -ry 800 && \
+mv image.png $1/$2.png
+
