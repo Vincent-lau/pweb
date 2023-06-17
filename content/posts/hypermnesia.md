@@ -2,7 +2,7 @@
 title: "Hypermnesia: Eventual Consistency in Mnesia"
 date: 2023-06-06T19:26:33+01:00
 description: "Extending Mnesia with automatic reconciliation"
-draft: true
+draft: false
 tags: ["Eventual consistency", "CRDTs", "Mnesia", "Erlang"]
 ---
 
@@ -249,8 +249,8 @@ CRDTs.
 ## Appendix
 
 There are plenty more I did not cover in this post, feel free to check out my
-full [dissertation](), the [code [repo](https://github.com/Vincent-lau/otp) and 
-the two videos below.
+full [dissertation](/writeup/hypermnesia.pdf), the
+code [repo](https://github.com/Vincent-lau/otp) and the two videos below.
 
 ### Presentation
 

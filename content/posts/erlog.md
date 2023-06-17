@@ -225,7 +225,7 @@ also blazingly fast.
 
 ## Appendix
 
-Feel free to checkout the [full dissertation](/writeup/diss.pdf) for a more formal
+Feel free to checkout the [full dissertation](/writeup/erlog.pdf) for a more formal
 and complete description of the project and the code
 [repo](https://github.com/Vincent-lau/erlog).
 
