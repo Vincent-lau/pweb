@@ -226,14 +226,16 @@ module Cps_mon (M: Res) = struct
 end
 ```
 
-This gives an example of a monad that is dissimilar to most monads we have in that
-it is not of a sum type (i.e. `Some` or `None`), but a function type (or an
-exponential object in category). Note the bind operator for this CPS monad first
-abstracts the application of f on into a new continuation, and then apply the
+This gives an example of a monad that is different from many of the monads 
+we will see in a monad introductory tutorial, in that
+it is not a sum type (i.e. `Some` or `None`), but a function type (or an
+exponential object in a category). Note the bind operator for this CPS monad first
+abstracts the application of `f` into a new continuation, and then apply the
 old cps onto it before abstracting all of these into another cps, which is
 exactly the style of CPS that allows us to chain things together.
 
-As an example usage, we can turn the following example[^4] of a cps style fib function:
+As an example usage, we can turn the following example[^4] of a cps style fib 
+function:
 
 [^4]: Example take from [Compiler Construction course](https://www.cl.cam.ac.uk/teaching/current/CompConstr/materials.html).
 
