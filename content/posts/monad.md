@@ -1,8 +1,9 @@
 ---
-title: "Monad"
+title: "Monad in programming and category theory"
 date: 2023-10-24T23:48:44+01:00
-description: "Yet another article on monads"
-draft: true
+description: "A monoid in the category of monad tutorials"
+tags: ["category theory", "functional programming", "computer science", "maths"]
+draft: false
 ---
 
 This article is very much my attempt to understand monad as a _design pattern_
@@ -66,7 +67,7 @@ can get quite cumbersome sometimes.
 
 [^1]: There is a [link](https://wiki.haskell.org/Monad_tutorials_timeline) 
 to all the monad tutorials online. This is where I found
-Eric's notes.
+Eric's notes. I hope this blog can be posted onto this list one day 😊.
 
 ### Definition
 
@@ -204,29 +205,74 @@ might only catch the exception by the code executed synchronously within it.
 
 Continuation parsing style (CPS) is a technique used in compilers so that the generated
 program can have certain properties, such as tail-call, explicit evaluation order,
-etc. There is in fact, a connection between monad and 
-
+etc. In fact, we can indeed model CPS with monads, with the following definition:
 
 ```ocaml
+module type Res = sig
+  type t
+end
 
-type result
+module Cps_mon (M: Res) = struct
+  type result = M.t
 
-type 'a cnt: 'a -> result
-type 'a cps_mon: 'a cnt -> result
+  type 'a cnt = 'a -> result
+  type 'a cps_mon = 'a cnt -> result
 
-let return x = fun k: cnt -> k x
-let (>>=) = 
 
+  let return (x: 'a): 'a cps_mon = fun (k: 'a cnt) -> k x
+
+  let (>>=) (cps: 'a cps_mon) (f: 'a -> 'b cps_mon) = 
+    fun (k: 'b cnt) -> cps (fun (x: 'a) -> f x k)
+end
+```
+
+This gives an example of a monad that is dissimilar to most monads we have in that
+it is not of a sum type (i.e. `Some` or `None`), but a function type (or an
+exponential object in category). Note the bind operator for this CPS monad first
+abstracts the application of f on into a new continuation, and then apply the
+old cps onto it before abstracting all of these into another cps, which is
+exactly the style of CPS that allows us to chain things together.
+
+As an example usage, we can turn the following example[^4] of a cps style fib function:
+
+[^4]: Example take from [Compiler Construction course](https://www.cl.cam.ac.uk/teaching/current/CompConstr/materials.html).
+
+```ocaml
+let rec fib m =
+  if m = 0 then 1
+  else if m = 1 then 1
+  else fib (m-1) + fib (m-2)
+
+let rec fib_cps m k =
+  if m = 0 then k 1
+  else if m = 1 then k 1
+  else fib_cps (m - 1) (fun a ->
+  fib_cps (m - 2) (fun b ->
+  k (a + b)))
+```
+
+into something that looks like this:
+
+```ocaml
+let open (module Fib_cps = Cps_mon(Int)) in
+let rec fib_cps (m: 'a cps_mon): ('a cps_mon) =
+  m >>= function
+  | x when x = 1 || x = 0 -> return 1
+  | x -> 
+    fib_cps (return (x - 1)) 
+    >>= fun y -> fib_cps (return (x - 2))
+    >>= fun z -> return (z + y)
 
 ```
 
-## Category theory [^2]
+In this example it might not be that obvious how monads are useful in simplifying
+our program, but we can see how the chaining helps us streamline our programs
+rather than trying to nesting functions.
 
-[^2]: Many of the notations and concepts are based on the 
-[Category Theory](https://www.cl.cam.ac.uk/teaching/current/L108/)
-course and notes by Andrew Pitts.
+## Category theory 
 
-A monad is defined to be "a monoid in the category of endofunctors". Endofunctors
+
+A monad[^2] is defined to be "a monoid in the category of endofunctors". Endofunctors
 refer to functors that map from a category \\(C\\) to the same category \\(C\\).
 A monoid in such a category is an object \\(M\\) with two morphisms 
 \\(\mu: M \times M \rightarrow M\\) and \\(\eta: I \rightarrow M\\) that satisfy
@@ -234,6 +280,10 @@ certain properties. To me, a more straightforward way of defining a monad on a
 category \\(C\\) would be an endofunctor \\(T: C \rightarrow C\\) with two natural
 transformations \\(\eta: \mathrm{id}\rightarrow T\\) and \\(\mu: T\circ T\to T\\) 
 such that the following two diagrams commute:
+
+[^2]: Many of the notations and concepts are based on the 
+[Category Theory](https://www.cl.cam.ac.uk/teaching/current/L108/)
+course and notes by Andrew Pitts.
 
 {{< quiver >}}
 <!-- https://q.uiver.app/#q=WzAsNCxbMCwwLCJUIl0sWzEsMCwiVFxcY2lyYyBUIl0sWzIsMCwidCJdLFsxLDEsInQiXSxbMCwxLCJUX1xcZXRhIl0sWzIsMSwiXFxldGFfVCIsMl0sWzAsMywiXFxtYXRocm17aWR9X1QiLDJdLFsyLDMsIlxcbWF0aHJte2lkfV9UIl0sWzEsMywiXFxtdSIsMV1d -->
