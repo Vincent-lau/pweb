@@ -62,7 +62,8 @@ params:
 
   defaultTheme: auto
 
-  ShowReadinTime: true
+  ShowReadingTime: true
+  ShowShareButtons: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
   ShowBreadCrumbs: true
