@@ -4,6 +4,7 @@
 [submodule "themes/PaperMod"]
 	path = themes/PaperMod
 	url = https://github.com/adityatelange/hugo-PaperMod.git
+	branch = master
 [submodule "themes/PaperModX"]
 	path = themes/PaperModX
 	url = git@github.com:reorx/hugo-PaperModX.git
