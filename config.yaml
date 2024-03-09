@@ -62,7 +62,7 @@ params:
 
   defaultTheme: auto
 
-  ShowReadingTime: false
+  ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
   ShowCodeCopyButtons: true
