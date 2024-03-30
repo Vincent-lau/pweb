@@ -1,0 +1,11 @@
+body.dark figure.svg {
+  filter: invert(1);
+}
+
+.highlight {
+  filter: invert(1);
+}
+
+body.dark .highlight {
+  filter: invert(0);
+}
