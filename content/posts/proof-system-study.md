@@ -120,6 +120,33 @@ simpler. It uses several techniques such as movers to combine blocks, refinement
 explicitly tracking non-determinism through encapsulation, etc. These techniques
 help make programmers' (who are trying to implement/verify a program) life easier.
 
+
+### CertiKOS
+
+This is about a proof of the security property of a system. The systems mentioned
+above are usually about the functional correctness of a system, specifying security
+of a system presents a different challenge. Firstly it is attractive to do so since
+if security often consists of corner cases of code where an attack can be launched,
+i.e. they are not in the normal good execution flow. It tends to be hard for developer
+to manually rule out all such possible cases. Formal verification can be helpful
+as it allows developer to do so-called "structured exploration"[^11], and systematically
+rule out possible attacks, subject to the proof assumptions.
+
+The key idea introduced in the CertiKOS[^12] paper is an observation function:
+O(principal, state) defines the set of objects/observations that can be made by
+the principal. Two states are then indistinguishable when their observations are
+the same. If we can then prove inductively that the state indistinguishability
+is preserved by the execution, non-interference can be proved, which means that
+two traces are different _entirely_ based on the user input/observed data. The
+opposite of that would be one process's execution result is interfered by another
+one due to, for example, some shared resources being modified. The meltdown attack
+can be approximately described as an interference: the (timing) result we get
+by launching the meltdown attack is not based on the private data we have, but
+some other kernel memory data, for example. This kind of interference by other
+process (in this case the kernel, and the CPU) breaks down the isolation between
+processes and can cause security problems.
+
+
 ### Industrial scale static analysis
 
 I want conclude the case study with an example of a real-world deployment of static
@@ -186,6 +213,7 @@ analysis and compositionality model to help speed up their analysis.
 | x86-TSO         | x86 memory model       |    multicore CPU memory model |   HOL4           |  useful memory model for ISA |
 | Armada          |  language for verification |  Impl + progressive abstr.                 |    Built with Dafny  | verification language with flexibility, automation and sound semantic extensibility  |
 | IronFleet       | RSM and KV store |  Spec & Impl  |  TLA & Dafny   | breakthrough in distributed system verification  |
+| CertiKOS | kernel security | e2e security | Coq | formalisation of security properties: non-interference |
 
 
 ## Does formally verified systems still have bugs?
@@ -319,4 +347,6 @@ probably remain being used in such areas.
 [^9]: https://news.ycombinator.com/item?id=15781508
 [^10]: Cousot, P., Cousot, R., Feret, J., Mauborgne, L., Miné, A., Monniaux, D., and Rival, X. The ASTRÉE analyzer.
 In Proceedings of the European Symposium on Programming (Edinburgh, Scotland, Apr. 2–10). Springer, Berlin, Heidelberg, 2005.
-
+[^11]: T. Murray and P. van Oorschot, "BP: Formal Proofs, the Fine Print and Side Effects," 2018 IEEE Cybersecurity Development (SecDev), Cambridge, MA, USA, 2018, pp. 1-10, doi: 10.1109/SecDev.2018.00009.
+keywords: {Security;Computational modeling;Cognition;Kernel;Arrays;Conferences;formal verification;computer security;software engineering},
+[^12]: David Costanzo, Zhong Shao, and Ronghui Gu. 2016. End-to-end verification of information-flow security for C and assembly programs. SIGPLAN Not. 51, 6 (June 2016), 648–664. https://doi.org/10.1145/2980983.2908100
